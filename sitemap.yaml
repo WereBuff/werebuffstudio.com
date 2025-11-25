@@ -1,0 +1,79 @@
+# Generated: 2025-11-25
+urlset:
+  - loc: https://werebuffstudio.com/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 1.0
+
+  - loc: https://werebuffstudio.com/games/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 0.9
+
+  - loc: https://werebuffstudio.com/games/kumarn/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 0.95
+
+  - loc: https://werebuffstudio.com/studio/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.7
+
+  - loc: https://werebuffstudio.com/press/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.6
+
+  - loc: https://werebuffstudio.com/career/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.5
+
+  # Policies
+  - loc: https://werebuffstudio.com/privacy-policy/
+    lastmod: 2025-11-25
+    changefreq: yearly
+    priority: 0.3
+
+  - loc: https://werebuffstudio.com/terms/
+    lastmod: 2025-11-25
+    changefreq: yearly
+    priority: 0.3
+
+  - loc: https://werebuffstudio.com/cookie-policy/
+    lastmod: 2025-11-25
+    changefreq: yearly
+    priority: 0.3
+
+  # News hub + internal summaries of external coverage
+  - loc: https://werebuffstudio.com/category/news/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 0.6
+
+  - loc: https://werebuffstudio.com/news/kumarn-coverage-mgronline/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.5
+
+  - loc: https://werebuffstudio.com/news/kumarn-ign-game-page/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.5
+
+  - loc: https://werebuffstudio.com/news/kumarn-sixoneindie-feature/
+    lastmod: 2025-11-25
+    changefreq: monthly
+    priority: 0.5
+
+  # Optional i18n entry pages (remove if not using /th/)
+  - loc: https://werebuffstudio.com/th/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 0.8
+
+  - loc: https://werebuffstudio.com/th/games/kumarn/
+    lastmod: 2025-11-25
+    changefreq: weekly
+    priority: 0.85

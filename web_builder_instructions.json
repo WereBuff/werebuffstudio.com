@@ -1,0 +1,647 @@
+{
+  "site": {
+    "brand": "Werebuff studio co., ltd.",
+    "baseUrl": "https://werebuffstudio.com",
+    "localeDefault": "en",
+    "locales": [
+      "en",
+      "th"
+    ],
+    "logo": "/assets/studio_logo.png",
+    "contactEmail": "werebuff.hr@gmail.com",
+    "address": "333/3 Ratchadanivej Soi 19, Bangkok, Thailand 10310",
+    "pressNote": "If you have questions pertaining to a submitted application or a job listing, please direct them to our Human Resources Department: werebuff.hr@gmail.com"
+  },
+  "theme": {
+    "style": "minimal-modern-indie-horror",
+    "font": "Noto Sans",
+    "palette": {
+      "bg": "#0C0F12",
+      "surface": "#11151A",
+      "textPrimary": "#E8ECEF",
+      "textSecondary": "#9AA4AE",
+      "accent": "#89FFC0",
+      "accentAlt": "#9BE1FF"
+    },
+    "useVectorIcons": true
+  },
+  "navigation": {
+    "primary": [
+      {
+        "label": {
+          "en": "Home",
+          "th": "หน้าแรก"
+        },
+        "path": "/"
+      },
+      {
+        "label": {
+          "en": "Games",
+          "th": "เกม"
+        },
+        "path": "/games/"
+      },
+      {
+        "label": {
+          "en": "News",
+          "th": "ข่าว"
+        },
+        "path": "/category/news/"
+      },
+      {
+        "label": {
+          "en": "Studio",
+          "th": "สตูดิโอ"
+        },
+        "path": "/studio/"
+      },
+      {
+        "label": {
+          "en": "Career",
+          "th": "ร่วมงาน"
+        },
+        "path": "/career/"
+      },
+      {
+        "label": {
+          "en": "Press",
+          "th": "ข่าวสื่อ"
+        },
+        "path": "/press/"
+      }
+    ],
+    "footer": [
+      {
+        "label": {
+          "en": "Privacy Policy",
+          "th": "นโยบายความเป็นส่วนตัว"
+        },
+        "path": "/privacy-policy/"
+      },
+      {
+        "label": {
+          "en": "Terms",
+          "th": "ข้อกำหนดการใช้บริการ"
+        },
+        "path": "/terms/"
+      },
+      {
+        "label": {
+          "en": "Cookie Policy",
+          "th": "คุกกี้"
+        },
+        "path": "/cookie-policy/"
+      }
+    ],
+    "social": [
+      {
+        "name": "X",
+        "url": "https://x.com/werebuffstudio"
+      },
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/@WEREBUFFSTUDIO"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61579618732870"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/company/werebuff-studio/"
+      },
+      {
+        "name": "TikTok",
+        "url": "https://www.tiktok.com/@werebuffstudio"
+      },
+      {
+        "name": "Discord",
+        "url": "https://discord.gg/sfGVWFxQN8"
+      }
+    ]
+  },
+  "routing": {
+    "i18n": {
+      "strategy": "subpath-optional",
+      "locales": {
+        "en": "/",
+        "th": "/th/"
+      }
+    },
+    "pages": [
+      {
+        "path": "/",
+        "template": "Home"
+      },
+      {
+        "path": "/games/",
+        "template": "GamesIndex"
+      },
+      {
+        "path": "/games/:slug/",
+        "template": "GameDetail",
+        "collection": "games"
+      },
+      {
+        "path": "/category/news/",
+        "template": "CategoryArchive",
+        "category": "news"
+      },
+      {
+        "path": "/studio/",
+        "template": "StaticPage"
+      },
+      {
+        "path": "/career/",
+        "template": "StaticPage"
+      },
+      {
+        "path": "/press/",
+        "template": "StaticPage"
+      },
+      {
+        "path": "/privacy-policy/",
+        "template": "PolicyPage"
+      },
+      {
+        "path": "/terms/",
+        "template": "PolicyPage"
+      },
+      {
+        "path": "/cookie-policy/",
+        "template": "PolicyPage"
+      }
+    ],
+    "redirects": []
+  },
+  "contentModels": {
+    "games": {
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "summary",
+          "type": "text"
+        },
+        {
+          "id": "body",
+          "type": "richtext"
+        },
+        {
+          "id": "release",
+          "type": "string"
+        },
+        {
+          "id": "platforms",
+          "type": "string[]"
+        },
+        {
+          "id": "storeUrl",
+          "type": "url"
+        },
+        {
+          "id": "heroImage",
+          "type": "asset"
+        },
+        {
+          "id": "gallery",
+          "type": "asset[]",
+          "maxItems": 12
+        },
+        {
+          "id": "tags",
+          "type": "string[]"
+        },
+        {
+          "id": "trailerUrl",
+          "type": "url"
+        },
+        {
+          "id": "extra",
+          "type": "object",
+          "properties": {
+            "developer": {
+              "type": "string",
+              "default": "Werebuff studio co., ltd."
+            },
+            "publisher": {
+              "type": "string",
+              "default": "Werebuff studio co., ltd."
+            },
+            "engine": {
+              "type": "string"
+            },
+            "rating": {
+              "type": "string"
+            },
+            "features": {
+              "type": "string[]"
+            }
+          }
+        }
+      ],
+      "seed": [
+        {
+          "title": "Kumarn: The Wandering Spirit",
+          "slug": "kumarn",
+          "summary": "A minimalist indie horror adventure inspired by Thai folklore. Play as a wandering child spirit guided by faint memories through temples, canals, and moonlit alleys to uncover the truth behind your unfinished story.",
+          "body": "<h3>Overview</h3><p><em>Kumarn: The Wandering Spirit</em> is a story-driven horror adventure that blends light platforming, tactile puzzles, and environmental storytelling. Set in a stylized, hand-crafted vision of Thailand, you traverse abandoned schoolyards, shrine-filled courtyards, and underground catacombs while evading vengeful entities drawn from local myth.</p><h3>Core Pillars</h3><ul><li><strong>Atmospheric Exploration:</strong> Navigate side-scrolling spaces with layered parallax, dynamic light, and minimalist UI that keeps you immersed.</li><li><strong>Thai Folklore, Reimagined:</strong> From temple bells to spirit-offering altars, mechanics and puzzles tie back to cultural rituals and objects.</li><li><strong>Quiet Tension:</strong> No jump-scare spam. Threat builds through silhouette, sound design, and timing—then releases with clever puzzle payoffs.</li><li><strong>Readable Challenges:</strong> Puzzle prompts, symbol language, and diegetic hints are conveyed through the environment.</li></ul><h3>Gameplay</h3><ul><li><strong>Light–Shadow Puzzles:</strong> Align lanterns, reflect moonbeams, and disrupt spirit wards to open new paths.</li><li><strong>Stealth Beats:</strong> Hold your breath behind prayer flags or slip under offering tables to avoid patrolling spirits.</li><li><strong>Chase Setpieces:</strong> Scripted pursuits through collapsing corridors and canal bridges, tuned for clarity and fairness.</li></ul><h3>Art & Audio</h3><p>Painterly materials, soft volumetrics, and a restrained color palette emphasize silhouette and mood. The score blends traditional instruments with modern ambient design; diegetic cues (bells, cicadas, chanting) serve both theme and mechanics.</p><h3>Accessibility</h3><ul><li>High-contrast UI and readable fonts (Noto Sans).</li><li>Optional puzzle hints and adjustable QTE windows.</li><li>Color-safe feedback and reduced-motion option for camera effects.</li></ul>",
+          "release": "Q4 2026",
+          "platforms": [
+            "PC (Steam)",
+            "Switch"
+          ],
+          "storeUrl": "https://store.steampowered.com/app/3888420/Kumarn_The_Wandering_Spirit/",
+          "heroImage": "/assets/Banner.png",
+          "gallery": [
+            "/assets/show1.png",
+            "/assets/show2.png",
+            "/assets/show3.png",
+            "/assets/show4.png",
+            "/assets/show5.png",
+            "/assets/show6.png"
+          ],
+          "tags": [
+            "horror",
+            "puzzle",
+            "adventure",
+            "platformer"
+          ],
+          "trailerUrl": "https://www.youtube.com/watch?v=b27SOnl8GkE",
+          "extra": {
+            "engine": "",
+            "rating": "",
+            "features": [
+              "Single-player",
+              "Controller support"
+            ]
+          }
+        }
+      ]
+    },
+    "posts": {
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "slug",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "category",
+          "type": "enum",
+          "values": [
+            "news"
+          ]
+        },
+        {
+          "id": "excerpt",
+          "type": "text"
+        },
+        {
+          "id": "cover",
+          "type": "asset"
+        },
+        {
+          "id": "body",
+          "type": "richtext"
+        },
+        {
+          "id": "date",
+          "type": "date"
+        },
+        {
+          "id": "externalUrl",
+          "type": "url"
+        }
+      ],
+      "seed": [
+        {
+          "title": "Media coverage: MGR Online",
+          "slug": "kumarn-coverage-mgronline",
+          "category": "news",
+          "excerpt": "Kumarn: The Wandering Spirit on MGR Online.",
+          "body": "Summary of the article and context for players.",
+          "externalUrl": "https://mgronline.com/game/detail/9680000077261",
+          "date": "2025-11-25"
+        },
+        {
+          "title": "Kumarn listed on IGN",
+          "slug": "kumarn-ign-game-page",
+          "category": "news",
+          "excerpt": "Kumarn: The Wandering Spirit game page on IGN.",
+          "body": "What players can find on IGN page.",
+          "externalUrl": "https://www.ign.com/games/kumarn-the-wandering-spirit",
+          "date": "2025-11-25"
+        },
+        {
+          "title": "Six One Indie feature",
+          "slug": "kumarn-sixoneindie-feature",
+          "category": "news",
+          "excerpt": "Feature article about Kumarn: The Wandering Spirit.",
+          "body": "Key highlights from Six One Indie.",
+          "externalUrl": "https://www.sixoneindie.com/read/experience-a-twisted-version-of-thailand-in-kumarn-the-wandering-spirit",
+          "date": "2025-11-25"
+        }
+      ]
+    },
+    "pages": {
+      "fields": [
+        {
+          "id": "title",
+          "type": "string"
+        },
+        {
+          "id": "slug",
+          "type": "string"
+        },
+        {
+          "id": "body",
+          "type": "richtext"
+        }
+      ],
+      "seed": [
+        {
+          "title": "Studio",
+          "slug": "studio",
+          "body": "Founded in 2023, Werebuff Studio is a creative game development company driven by passion, innovation, and storytelling. We specialize in crafting immersive worlds and engaging gameplay experiences that spark imagination and connect with players on a deeper level."
+        },
+        {
+          "title": "Press",
+          "slug": "press",
+          "body": "Press & business inquiries: werebuff.hr@gmail.com"
+        },
+        {
+          "title": "Career",
+          "slug": "career",
+          "body": "No openings at this time."
+        }
+      ]
+    },
+    "policies": {
+      "fields": [
+        {
+          "id": "title",
+          "type": "string"
+        },
+        {
+          "id": "slug",
+          "type": "string"
+        },
+        {
+          "id": "body",
+          "type": "richtext"
+        }
+      ],
+      "seed": [
+        {
+          "title": "Privacy Policy",
+          "slug": "privacy-policy",
+          "body": "<h2>Privacy Policy (EN)</h2><p>Werebuff studio co., ltd. (\"we\") respects your privacy. This policy explains what data we collect, why we collect it, and how we handle it. We collect limited analytics (e.g., pages visited, device type) to improve the site, and contact data only if you provide it (e.g., email).</p><h3>Data We Collect</h3><ul><li>Usage analytics via cookies or similar technologies.</li><li>Contact information if you email us or submit forms.</li></ul><h3>How We Use Data</h3><ul><li>Operate and improve the website experience.</li><li>Respond to press or business inquiries.</li></ul><h3>Your Rights</h3><p>Depending on your location, you may have rights to access, rectify, or delete personal data. Contact: werebuff.hr@gmail.com.</p><h3>International Transfers</h3><p>We may process data outside your country; we apply reasonable safeguards.</p><h3>Changes</h3><p>We may update this policy. See the page timestamp for the latest revision.</p><hr/><h2>นโยบายความเป็นส่วนตัว (TH)</h2><p>บริษัท Werebuff studio co., ltd. (\"บริษัทฯ\") เคารพความเป็นส่วนตัวของผู้ใช้งาน เอกสารนี้อธิบายประเภทข้อมูลที่เก็บ วัตถุประสงค์ และแนวทางการจัดการข้อมูล เราเก็บสถิติการใช้งานเว็บไซต์ในภาพรวม และเก็บข้อมูลการติดต่อเฉพาะเมื่อท่านสมัครใจให้ข้อมูล</p><h3>ข้อมูลที่เก็บ</h3><ul><li>ข้อมูลวิเคราะห์การใช้งานผ่านคุกกี้หรือเทคโนโลยีที่คล้ายกัน</li><li>ข้อมูลการติดต่อเมื่อท่านติดต่อบริษัทฯ</li></ul><h3>วัตถุประสงค์</h3><ul><li>ปรับปรุงประสบการณ์ใช้งานเว็บไซต์</li><li>ตอบกลับการติดต่อทางธุรกิจ/สื่อ</li></ul><h3>สิทธิของท่าน</h3><p>ท่านอาจมีสิทธิในการเข้าถึง แก้ไข หรือลบข้อมูล ติดต่อ: werebuff.hr@gmail.com</p><h3>การโอนข้อมูลระหว่างประเทศ</h3><p>ข้อมูลอาจถูกประมวลผลนอกประเทศของท่าน โดยมีมาตรการที่เหมาะสม</p><h3>การเปลี่ยนแปลง</h3><p>บริษัทฯ อาจปรับปรุงนโยบายเป็นระยะ โปรดตรวจสอบวันปรับปรุงล่าสุด</p>"
+        },
+        {
+          "title": "Terms of Service",
+          "slug": "terms",
+          "body": "<h2>Terms of Service (EN)</h2><p>By accessing werebuff.com, you agree to these terms. Content is provided \"as is\" without warranty. Do not misuse the site, attempt to breach security, or infringe intellectual property.</p><h3>Intellectual Property</h3><p>All trademarks, logos, and content are owned by Werebuff studio co., ltd. or respective owners.</p><h3>Links</h3><p>Third‑party links are provided for convenience; we are not responsible for their content.</p><h3>Limitation of Liability</h3><p>We are not liable for indirect or consequential damages arising from site use.</p><h3>Governing Law</h3><p>These terms are governed by the laws of Thailand unless otherwise required by local law.</p><hr/><h2>ข้อกำหนดการใช้บริการ (TH)</h2><p>เมื่อท่านเข้าใช้งานเว็บไซต์ werebuff.com ถือว่าท่านยอมรับข้อกำหนดนี้ เนื้อหาให้บริการตามสภาพที่เป็นอยู่โดยไม่มีการรับประกันใด ๆ ห้ามใช้งานในทางมิชอบ เจาะระบบ หรือกระทำการละเมิดทรัพย์สินทางปัญญา</p><h3>ทรัพย์สินทางปัญญา</h3><p>เครื่องหมายการค้า โลโก้ และเนื้อหาทั้งหมดเป็นของ Werebuff studio co., ltd. หรือเจ้าของที่เกี่ยวข้อง</p><h3>ลิงก์บุคคลที่สาม</h3><p>เราไม่รับผิดชอบต่อเนื้อหาของเว็บไซต์ภายนอกที่ลิงก์ออกไป</p><h3>ข้อจำกัดความรับผิด</h3><p>บริษัทฯ ไม่ต้องรับผิดชอบความเสียหายทางอ้อมหรือผลสืบเนื่องจากการใช้งานเว็บไซต์</p><h3>กฎหมายที่ใช้บังคับ</h3><p>ข้อกำหนดนี้อยู่ภายใต้กฎหมายไทย เว้นแต่กฎหมายท้องถิ่นกำหนดเป็นอย่างอื่น</p>"
+        },
+        {
+          "title": "Cookie Policy",
+          "slug": "cookie-policy",
+          "body": "<h2>Cookie Policy (EN)</h2><p>We use cookies and similar technologies to remember preferences and measure site performance.</p><h3>Types</h3><ul><li>Essential: required for basic functionality.</li><li>Analytics: anonymized usage statistics.</li></ul><h3>Control</h3><p>You can manage cookies in your browser settings or via our banner. Some features may not work without cookies.</p><hr/><h2>นโยบายคุกกี้ (TH)</h2><p>เราใช้คุกกี้และเทคโนโลยีที่คล้ายกันเพื่อจดจำการตั้งค่าของท่านและวัดประสิทธิภาพเว็บไซต์</p><h3>ประเภทคุกกี้</h3><ul><li>จำเป็นต่อการทำงานพื้นฐานของเว็บไซต์</li><li>วิเคราะห์การใช้งาน (แบบไม่ระบุตัวตน)</li></ul><h3>การควบคุม</h3><p>ท่านสามารถจัดการคุกกี้ได้ผ่านการตั้งค่าเบราว์เซอร์หรือแบนเนอร์ของเรา การปิดคุกกี้บางประเภทอาจทำให้ฟังก์ชันบางอย่างใช้งานไม่ได้</p>"
+        }
+      ]
+    }
+  },
+  "templates": {
+    "Home": {
+      "sections": [
+        {
+          "type": "Hero",
+          "props": {
+            "headline": {
+              "en": "Kumarn: The Wandering Spirit",
+              "th": "กุมาร: วิญญาณพเนจร"
+            },
+            "subheading": {
+              "en": "Q4 2026 — Indie horror adventure.",
+              "th": "ไตรมาส 4 ปี 2026 — อินดี้ฮอร์เรอร์ผจญภัย"
+            },
+            "cta": {
+              "label": {
+                "en": "View game",
+                "th": "ดูเกม"
+              },
+              "href": "/games/kumarn/"
+            },
+            "media": "/assets/Banner.png"
+          }
+        },
+        {
+          "type": "Statement",
+          "props": {
+            "title": {
+              "en": "Werebuff Studio",
+              "th": "Werebuff Studio"
+            },
+            "body": {
+              "en": "Founded in 2023, Werebuff Studio is a creative game development company driven by passion, innovation, and storytelling. We specialize in crafting immersive worlds and engaging gameplay experiences that spark imagination and connect with players on a deeper level.",
+              "th": "ก่อตั้งในปี 2023 Werebuff Studio คือทีมพัฒนาเกมที่ขับเคลื่อนด้วยแพชชั่น นวัตกรรม และการเล่าเรื่อง เราสร้างโลกที่ชวนดื่มด่ำและเกมเพลย์ที่น่าจดจำเพื่อเชื่อมโยงผู้เล่นในระดับลึก"
+            }
+          }
+        },
+        {
+          "type": "GamesGrid",
+          "props": {
+            "source": "games",
+            "href": "/games/:slug/"
+          }
+        },
+        {
+          "type": "NewsStrip",
+          "props": {
+            "source": "posts",
+            "filter": {
+              "category": "news"
+            },
+            "limit": 3
+          }
+        },
+        {
+          "type": "CTA",
+          "props": {
+            "heading": {
+              "en": "Press & Business",
+              "th": "ติดต่อสื่อ"
+            },
+            "href": "/press/"
+          }
+        }
+      ]
+    },
+    "GamesIndex": {
+      "data": {
+        "source": "games",
+        "sort": [
+          "title"
+        ]
+      },
+      "cards": {
+        "image": "heroImage",
+        "title": "title",
+        "meta": "release",
+        "href": "/games/:slug/"
+      }
+    },
+    "GameDetail": {
+      "layout": [
+        "HeroMedia",
+        "KeyFacts",
+        "Body",
+        "Gallery",
+        "StoreCTA",
+        "Trailer"
+      ],
+      "bindings": {
+        "KeyFacts": {
+          "Release": "release",
+          "Platforms": "platforms",
+          "Tags": "tags"
+        },
+        "StoreCTA": {
+          "href": "storeUrl",
+          "label": "Add to wishlist"
+        },
+        "Trailer": {
+          "url": "trailerUrl"
+        }
+      }
+    },
+    "CategoryArchive": {
+      "data": {
+        "source": "posts",
+        "filter": {
+          "category": "{{category}}"
+        },
+        "paginate": 12
+      }
+    },
+    "StaticPage": {
+      "layout": [
+        "Title",
+        "Body"
+      ]
+    },
+    "PolicyPage": {
+      "layout": [
+        "Title",
+        "Body"
+      ]
+    }
+  },
+  "seo": {
+    "defaults": {
+      "titleSuffix": " | Werebuff Studio",
+      "meta": {
+        "description": "Founded in 2023, Werebuff Studio is a creative game development company driven by passion, innovation, and storytelling. We specialize in crafting immersive worlds and engaging gameplay experiences that spark imagination and connect with players on a deeper level."
+      },
+      "openGraph": {
+        "site_name": "Werebuff Studio",
+        "image": "/assets/Palatte.png"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "image": "/assets/Palatte.png"
+      }
+    },
+    "routes": [
+      {
+        "match": "/",
+        "title": "Home"
+      },
+      {
+        "match": "/games/",
+        "title": "Games"
+      },
+      {
+        "match": "/games/:slug/",
+        "title": "{{games.title}}"
+      },
+      {
+        "match": "/category/:cat/",
+        "title": "{{cat | capitalize}} — News"
+      },
+      {
+        "match": "/studio/",
+        "title": "Studio"
+      },
+      {
+        "match": "/career/",
+        "title": "Career"
+      },
+      {
+        "match": "/press/",
+        "title": "Press"
+      },
+      {
+        "match": "/privacy-policy/",
+        "title": "Privacy Policy"
+      },
+      {
+        "match": "/terms/",
+        "title": "Terms of Service"
+      },
+      {
+        "match": "/cookie-policy/",
+        "title": "Cookie Policy"
+      }
+    ]
+  },
+  "performance": {
+    "images": {
+      "formats": [
+        "avif",
+        "webp",
+        "jpeg"
+      ],
+      "lazy": true,
+      "skeleton": true
+    },
+    "scripts": {
+      "defer": true
+    },
+    "gdpr": {
+      "cookieBanner": "optional"
+    }
+  },
+  "ux": {
+    "pageTransitions": {
+      "type": "fade-or-slide",
+      "durationMs": 220,
+      "respectReducedMotion": true,
+      "fallback": "instant"
+    },
+    "focusRing": {
+      "visible": true,
+      "style": "2px auto"
+    },
+    "keyboardNav": true,
+    "contrast": "WCAG AA+",
+    "skeletonLoading": {
+      "cards": true,
+      "images": true,
+      "text": true
+    }
+  }
+}
