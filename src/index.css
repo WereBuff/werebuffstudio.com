@@ -1,0 +1,124 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@400;700&family=Afacad:wght@400;500;600;700&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-brand-black text-brand-white font-body antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Scroll Snap Container */
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  /* Scroll Snap Section */
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .snap-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .snap-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+
+  /* Heading Styles */
+  .heading-red {
+    @apply font-heading font-bold text-brand-red;
+    font-size: 64px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .heading-red {
+      font-size: 32px;
+    }
+  }
+
+  /* Body Text Styles */
+  .body-text {
+    @apply font-body text-brand-white;
+    font-size: 28px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .body-text {
+      font-size: 18px;
+    }
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-brand-red text-brand-white font-heading font-bold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-red-700 hover:scale-105 cursor-pointer;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .btn-primary {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer;
+  }
+
+  /* Modal Overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    @apply bg-gray-900 rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative;
+  }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      @apply p-6;
+    }
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  }
+}
